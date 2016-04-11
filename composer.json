@@ -1,0 +1,15 @@
+{
+    "name": "amadeushu/xlsx-converter",
+    "description": "",
+    "authors": [
+        {
+            "name": "amadeushu",
+            "email": "it@hu.amadeus.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.*"
+    },
+    "minimum-stability": "stable"
+}
