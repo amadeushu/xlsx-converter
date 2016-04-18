@@ -13,7 +13,8 @@ class XlsxConverterServiceProvider extends ServiceProvider
    */
   public function boot()
   {
-    // 
+    $this->loadViewsFrom(__DIR__ . '/views', 'xlsx-converter');
+    if (! $this->app->routesAreCached()) { require __DIR__.'/routes.php'; }
   }
 
   /**
