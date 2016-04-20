@@ -1,11 +1,32 @@
 <?php
+/**
+ * Extranet: Xlsx Converter
+ *
+ * @package    Amadeushu\XlsxConverter
+ * @subpackage Amadeushu\XlsxConverter\Format
+ * @author     Tamas Verten <tverten@hu.amadeus.com>
+ * @copyright  2016 Amadeus Hungary
+ */
 
 namespace Amadeushu\XlsxConverter;
 
 use PHPExcel_Style_NumberFormat;
 
+/**
+ * Format trait
+ *
+ * Az excel generáló típusmeghatározó függvényének feltöltése,
+ * a cellák típusainak meghatározása.
+ * 
+ * @package    Amadeushu\XlsxConverter
+ * @subpackage Amadeushu\XlsxConverter\Format
+ * @author     Tamas Verten <tverten@hu.amadeus.com>
+ */
 trait Format
 {
+  /**
+   * Az értékek típusának megállapítása és a formátumok tömbjének feltöltése
+   */
   private function detect()
   {
     // Iterálunk a sorokon

@@ -1,9 +1,29 @@
 <?php
+/**
+ * Extranet: Xlsx Converter
+ *
+ * @package    Amadeushu\XlsxConverter
+ * @subpackage Amadeushu\XlsxConverter\Value
+ * @author     Tamas Verten <tverten@hu.amadeus.com>
+ * @copyright  2016 Amadeus Hungary
+ */
 
 namespace Amadeushu\XlsxConverter;
 
+/**
+ * Value trait
+ *
+ * Az értékek típuskonverziójának végrehajtása
+ * 
+ * @package    Amadeushu\XlsxConverter
+ * @subpackage Amadeushu\XlsxConverter\Value
+ * @author     Tamas Verten <tverten@hu.amadeus.com>
+ */
 trait Value
 {
+  /**
+   * Az értékek típusának meghatározása és a szövegek UTF-8 kódolása (amennyiben szükséges)
+   */
   private function build()
   {
     // Iterálunk a sorokon
