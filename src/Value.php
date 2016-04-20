@@ -25,9 +25,20 @@ trait Value
         }
         else
         {
+          // A cella értékének karakterkódolása...
+          $inconv = mb_detect_encoding($cell);
+
+          // ...amely ha nem UTF-8...
+          if ($inconv != 'UTF-8')
+          {
+            // ...akkor UTF-8-ra kódoljuk
+            $cell = iconv($inconv, 'UTF-8', $cell);
+          }
+
           // Ha bármi más, a tömbbe tesszük
           $this->value[$row_idx][$col_idx] = $cell;
         }
+
         // Egyet hozzáadunk az oszlopindexhez
         $col_idx++;
       }

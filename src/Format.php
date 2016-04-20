@@ -37,7 +37,7 @@ trait Format
         {
           $this->format[$cell_key] = PHPExcel_Style_NumberFormat::FORMAT_GENERAL;
         }
-        }
+      }
     }
   }
 }
