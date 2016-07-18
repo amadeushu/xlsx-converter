@@ -38,10 +38,16 @@ trait Value
         // Ha szám a cella értéke
         if (is_numeric($cell))
         {
-          // Számértéket veszünk
-          $cell = intval($cell);
-          // Majd mint szám a tömbbe illesztjük
-          $this->value[$row_idx][$col_idx] = (integer)$cell;
+          //$cell = (string)floatval($cell).' - '.$cell;
+          
+          if (floatval($cell) !== $cell)
+          {
+            $cell = (float)$cell;
+          }
+          else
+          {
+            $cell = intval($cell);
+          }
         }
         else
         {
@@ -54,10 +60,10 @@ trait Value
             // ...akkor UTF-8-ra kódoljuk
             $cell = iconv($inconv, 'UTF-8', $cell);
           }
-
-          // Ha bármi más, a tömbbe tesszük
-          $this->value[$row_idx][$col_idx] = $cell;
         }
+        
+        // A tömbbe tesszük
+        $this->value[$row_idx][$col_idx] = $cell;
 
         // Egyet hozzáadunk az oszlopindexhez
         $col_idx++;

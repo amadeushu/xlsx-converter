@@ -48,9 +48,9 @@ trait Format
         }
         else if (is_float($cell_value)) // Ha tört szám
         {
-          $this->format[$cell_key] = PHPExcel_Style_NumberFormat::FORMAT_NUMBER_00;
+          $this->format[$cell_key] = PHPExcel_Style_NumberFormat::FORMAT_NUMBER_COMMA_SEPARATED1;
         }
-        else if (is_numeric($cell_value) || is_integer($cell_value)) // Ha szám
+        else if (is_integer($cell_value)) // Ha szám
         {
           $this->format[$cell_key] = PHPExcel_Style_NumberFormat::FORMAT_NUMBER;
         }

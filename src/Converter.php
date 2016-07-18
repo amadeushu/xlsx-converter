@@ -29,8 +29,8 @@ class Converter
   // A meghatározott típusra alakított értékek tömbje
   public $value;
 
-  // Privát; Az excel oszlopnevei
-  private $columns;
+  // Az excel oszlopnevei
+  public $columns;
   // Privát; A feldolgozandó adatok
   private $array;
 
@@ -120,5 +120,6 @@ class Converter
 
     // A formátumok felismerése és beállítása
     $this->detect();
+    //dd($this);
   }
 }
