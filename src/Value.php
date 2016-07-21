@@ -35,8 +35,12 @@ trait Value
       // Iterálunk az oszlopokon
       foreach ($row as $cell_key => $cell)
       {
-        // Ha szám a cella értéke
-        if (is_numeric($cell))
+        if (preg_match('`^.*?%$`', $cell))
+        {
+          $cell = intval(str_replace('%', '', $cell));
+          $cell /= 100;
+        }
+        else if (is_numeric($cell)) // Ha szám a cella értéke
         {
           //$cell = (string)floatval($cell).' - '.$cell;
           
