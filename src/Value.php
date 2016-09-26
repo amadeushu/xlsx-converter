@@ -42,15 +42,13 @@ trait Value
         }
         else if (is_numeric($cell)) // Ha szám a cella értéke
         {
-          //$cell = (string)floatval($cell).' - '.$cell;
-          
-          if (floatval($cell) !== $cell)
+          if (ceil($cell) == $cell)
           {
-            $cell = (float)$cell;
+            $cell = intval($cell);
           }
           else
           {
-            $cell = intval($cell);
+            $cell = (float)$cell;
           }
         }
         else
